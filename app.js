@@ -17,7 +17,8 @@ const server = http.Server(app);
 require("dotenv").config();
 const originC = process.env.CLIENT_URL;
 const originA = process.env.ADMIN_URL;
-
+app.set("trust proxy", true);
+app.set("allowHttp", true);
 // import socket io
 const io = socket(server, {
   cors: {
