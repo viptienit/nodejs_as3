@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Document</title>
+    </head>
+    <body>
+      <div style="max-width: 90%;">
+        <h1 style="color: red;">Xin Chào {{fullname}}</h1></br>
+          <h5>Phone: {{phone}}</h5>
+          <h5>Address: {{address}}</h5>
+          <div style="display: flex;text-align: center;">
+            <span style="width: 300px;">Tên Sản Phẩm</span> 
+            <span style="width: 50px;">Hình Ảnh</span>
+            <span style="width: 150px;" >Giá</span>
+            <span style="width: 100px;" >Số Lượng</span>
+            <span style="width: 150px;">Thành Tiền</span> 
+         </div>
+        {{#each cart}}
+        <div style="display: flex;text-align: center;">
+          <span style="width: 300px;">{{#with this}}{{nameProduct}}{{/with}}</span> 
+          {{#with this}} <img src="{{img}}" style="width: 50px;"/>{{/with}} 
+          <span style="width: 150px;" >{{#with this}}{{priceProduct}}{{/with}} VND</span>
+          <span style="width: 100px;" >{{#with this}}{{count}}{{/with}}</span>
+          <span style="width: 150px;">{{#with this}}{{total}}{{/with}} VND</span> 
+       </div>
+        {{/each}}
+         
+        <h1>Tổng Thanh Toán :</h1>
+        <h1>{{total}} VND</h1>
+    
+        <p>Cảm Ơn Bạn!</p>
+      </div>
+      
+    </body>
+    </html>
