@@ -118,6 +118,7 @@ exports.checkAdmin = (req, res, next) => {
               return res.send({
                 id: data[0]._id,
                 role: data[0].role,
+                token: token
               });
             } else {
               res.send("Bạn không phải là Admin hoặc Adviser");
