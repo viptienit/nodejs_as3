@@ -21,7 +21,7 @@ const originA = process.env.ADMIN_URL;
 // import socket io
 const io = socket(server, {
   cors: {
-    origin: ['https://client-ass3-nodejs-9o4r-n0qfd5jci-lois-projects-f8f45ffc.vercel.app', originC],
+    origin: ['https://client-ass3-nodejs-9o4r.vercel.app/', originC],
     allowedHeaders: ["my-custom-header"],
     credentials: true,
   },
