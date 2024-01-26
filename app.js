@@ -17,12 +17,11 @@ const server = http.Server(app);
 require("dotenv").config();
 const originC = process.env.CLIENT_URL;
 const originA = process.env.ADMIN_URL;
-app.set("trust proxy", true);
-app.set("allowHttp", true);
+
 // import socket io
 const io = socket(server, {
   cors: {
-    origin: [originA, originC],
+    origin: ['https://client-ass3-nodejs-9o4r-n0qfd5jci-lois-projects-f8f45ffc.vercel.app', originC],
     allowedHeaders: ["my-custom-header"],
     credentials: true,
   },
