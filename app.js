@@ -21,14 +21,14 @@ const originA = process.env.ADMIN_URL;
 // import socket io
 const io = socket(server, {
   cors: {
-    origin: ['https://client-ass3-nodejs-9o4r.vercel.app','http://localhost:3001', originC],
+    origin: ['https://admin2-ass3.web.app/','http://localhost:3001', originC],
     allowedHeaders: ["my-custom-header"],
     credentials: true,
   },
 });
 app.use(
   cors({
-    origin: ['https://client-ass3-nodejs-9o4r.vercel.app','http://localhost:3001', originC],
+    origin: ['https://admin2-ass3.web.app/','http://localhost:3001', originC],
     credentials: true,
   })
 );
