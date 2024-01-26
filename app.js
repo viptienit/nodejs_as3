@@ -28,7 +28,7 @@ const io = socket(server, {
 });
 app.use(
   cors({
-    origin: ['https://client-ass3-nodejs-9o4r.vercel.app','http://localhost:3001/', originC],
+    origin: ['https://client-ass3-nodejs-9o4r.vercel.app','http://localhost:3001', originC],
     credentials: true,
   })
 );
