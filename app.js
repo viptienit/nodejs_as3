@@ -21,14 +21,14 @@ const originA = process.env.ADMIN_URL;
 // import socket io
 const io = socket(server, {
   cors: {
-    origin: ['https://admin2-ass3.web.app','http://localhost:3001', originC],
+    origin: ['https://admin2-ass3.web.app','http://localhost:3001', 'https://frontend2-ass.web.app'],
     allowedHeaders: ["my-custom-header"],
     credentials: true,
   },
 });
 app.use(
   cors({
-    origin: ['https://admin2-ass3.web.app','http://localhost:3001', originC],
+    origin: ['https://admin2-ass3.web.app','http://localhost:3001', 'https://frontend2-ass.web.app'],
     credentials: true,
   })
 );
