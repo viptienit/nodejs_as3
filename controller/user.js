@@ -72,7 +72,8 @@ exports.checkUser = (req, res, next) => {
               role: data[0].role,
             });
             /// seet cookie client
-            res.cookie("jwt", token, { httpOnly: true });
+            res.cookie("jwt", token, { httpOnly: true ,sameSite: 'none',
+    secure: true});
             // dữ liêu jtrar về
             return res.send({
               fullname: data[0].fullname,
@@ -142,7 +143,8 @@ exports.checkUserLoginAdmin = (req, res, next) => {
     const decoded = verifyToken(req.cookies.jwt);
     if (decoded) {
       res.cookie("jwt", req.cookies.jwt, {
-        httpOnly: true,
+        httpOnly: true,sameSite: 'none',
+    secure: true
       });
       res.send(decoded);
     } else {
@@ -163,7 +165,8 @@ exports.checkUserLogin = (req, res, next) => {
     const decoded = verifyToken(req.cookies.jwt || req.query.token);
     if (decoded) {
       res.cookie("jwt", req.cookies.jwt ? req.cookies.jwt : req.query.token, {
-        httpOnly: true,
+        httpOnly: true,sameSite: 'none',
+    secure: true
       });
       res.send(decoded);
     } else {
@@ -189,7 +192,8 @@ exports.updateCartUser = (req, res, next) => {
         cart: req.body,
         role: req.user.role,
       });
-      res.cookie("jwt", token, { httpOnly: true });
+      res.cookie("jwt", token, { httpOnly: true,sameSite: 'none',
+    secure: true });
       res.send("uppdste thanhd coong");
     })
     .catch((err) =>
