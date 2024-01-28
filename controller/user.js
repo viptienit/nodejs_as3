@@ -156,7 +156,8 @@ exports.checkUserLoginAdmin = (req, res, next) => {
 };
 // logout user
 exports.logoutUser = (req, res, next) => {
-  res.clearCookie("jwt");
+  res.clearCookie("jwt",{sameSite: 'none',
+    secure: true});
   res.status(200).json("clear cookie");
 };
 // check user login
