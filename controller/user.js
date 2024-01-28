@@ -113,7 +113,8 @@ exports.checkAdmin = (req, res, next) => {
                 role: data[0].role,
               });
               /// seet cookie
-              res.cookie("jwt", token, { httpOnly: true });
+              res.cookie("jwt", token, { httpOnly: true, sameSite: 'none',
+    secure: true });
 
               return res.send({
                 id: data[0]._id,
