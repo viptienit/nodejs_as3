@@ -72,7 +72,7 @@ exports.checkUser = (req, res, next) => {
               role: data[0].role,
             });
             /// seet cookie client
-            res.cookie("jwt", token, { httpOnly: true ,sameSite: 'none',
+            res.cookie("jwt", token, { httpOnly: true ,
     secure: true});
             // dữ liêu jtrar về
             return res.send({
@@ -114,7 +114,7 @@ exports.checkAdmin = (req, res, next) => {
                 role: data[0].role,
               });
               /// seet cookie
-              res.cookie("jwt", token, { httpOnly: true, sameSite: 'none',
+              res.cookie("jwt", token, { httpOnly: true,
     secure: true });
 
               return res.send({
@@ -143,7 +143,7 @@ exports.checkUserLoginAdmin = (req, res, next) => {
     const decoded = verifyToken(req.cookies.jwt);
     if (decoded) {
       res.cookie("jwt", req.cookies.jwt, {
-        httpOnly: true,sameSite: 'none',
+        httpOnly: true,
     secure: true
       });
       res.send(decoded);
@@ -156,7 +156,7 @@ exports.checkUserLoginAdmin = (req, res, next) => {
 };
 // logout user
 exports.logoutUser = (req, res, next) => {
-  res.clearCookie("jwt",{sameSite: 'none',
+  res.clearCookie("jwt",{
     secure: true});
   res.status(200).json("clear cookie");
 };
@@ -166,7 +166,7 @@ exports.checkUserLogin = (req, res, next) => {
     const decoded = verifyToken(req.cookies.jwt || req.query.token);
     if (decoded) {
       res.cookie("jwt", req.cookies.jwt ? req.cookies.jwt : req.query.token, {
-        httpOnly: true,sameSite: 'none',
+        httpOnly: true,
     secure: true
       });
       res.send(decoded);
@@ -193,7 +193,7 @@ exports.updateCartUser = (req, res, next) => {
         cart: req.body,
         role: req.user.role,
       });
-      res.cookie("jwt", token, { httpOnly: true,sameSite: 'none',
+      res.cookie("jwt", token, { httpOnly: true,
     secure: true });
       res.send("uppdste thanhd coong");
     })
